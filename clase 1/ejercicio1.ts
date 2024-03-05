@@ -7,7 +7,7 @@ Salida: El factorial de n, es decir, n!. Salida: 5x4x3x2x1 = 120
 
 // Enfoque 1
 function calculateFactorial(num: number): number {
-  let result = num;
+  let result: number = num;
   for (let i = num - 1; i > 0; i--) {
     result = result * i;
   }

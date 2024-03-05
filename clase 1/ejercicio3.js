@@ -5,8 +5,7 @@ Descripción: Determinar si una cadena es un palíndromo o no utilizando recursi
 Entrada: Una cadena de caracteres. Entrada: “radar”
 Salida: True si la cadena es un palíndromo, False en caso contrario. Salida: true
 */
-
 function checkPalindrome(word) {
-  return word === word.split("").reverse().join("");
+    return word === word.split("").reverse().join("");
 }
-console.log("palindomo: ", checkPalindrome("radar"));
+console.log("palindome: ", checkPalindrome("radar"));

@@ -9,4 +9,4 @@ function checkPalindrome(word: string): boolean {
   return word === word.split("").reverse().join("");
 }
 
-console.log("palindomo: ", checkPalindrome("radar"));
+console.log("palindome: ", checkPalindrome("radar"));
