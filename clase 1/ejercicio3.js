@@ -6,6 +6,6 @@ Entrada: Una cadena de caracteres. Entrada: “radar”
 Salida: True si la cadena es un palíndromo, False en caso contrario. Salida: true
 */
 function checkPalindrome(word) {
-    return word === word.split("").reverse().join("");
+    return word.toLowerCase() === word.toLowerCase().split("").reverse().join("");
 }
 console.log("palindome: ", checkPalindrome("radar"));

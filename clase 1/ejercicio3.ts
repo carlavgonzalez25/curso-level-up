@@ -6,7 +6,7 @@ Salida: True si la cadena es un palíndromo, False en caso contrario. Salida: tr
 */
 
 function checkPalindrome(word: string): boolean {
-  return word === word.split("").reverse().join("");
+  return word.toLowerCase() === word.toLowerCase().split("").reverse().join("");
 }
 
 console.log("palindome: ", checkPalindrome("radar"));
