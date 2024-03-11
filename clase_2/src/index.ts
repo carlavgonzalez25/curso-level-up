@@ -60,3 +60,24 @@ async function fetchMovies(query: string): Promise<ApiResponse> {
     throw Error;
   }
 }
+
+/* 
+Ejercicio algoritmos
+*/
+
+function canSum(x: number, arr: number[]): boolean {
+  let isInArray = false;
+
+  arr.forEach((el: number, index: number) => {
+    const val = x - el;
+
+    const newArr = arr.filter((el: number, i: number) => i !== index);
+
+    if (newArr.includes(val)) isInArray = true;
+  });
+
+  return isInArray;
+}
+
+console.log(canSum(8, [5, 3, 4, 7]));
+console.log(canSum(4, [5, 3, 2, 7]));
