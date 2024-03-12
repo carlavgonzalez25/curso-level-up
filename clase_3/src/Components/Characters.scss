@@ -1,0 +1,12 @@
+.characters-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+
+  .item {
+    img {
+      max-width: 300px;
+      height: auto;
+    }
+  }
+}
