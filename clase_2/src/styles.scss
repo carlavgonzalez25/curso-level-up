@@ -1,0 +1,31 @@
+#container {
+  form {
+    margin-bottom: 36px;
+    input {
+      width: 500px;
+      height: 30px;
+      font-size: 16px;
+    }
+    #submitBtn {
+      width: 100px;
+      height: 36px;
+      font-size: 16px;
+      background-color: lightcoral;
+      color: rgb(53, 53, 53);
+      border-radius: 5px;
+    }
+  }
+}
+
+#results-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+
+  .single-result {
+    img {
+      max-width: 300px;
+      height: auto;
+    }
+  }
+}

@@ -1,4 +1,5 @@
 import { ApiResponse, Result } from "./types/types";
+import "./styles.scss";
 
 const API_KEY = "5c95e67a285df52717b9d9c7a977eabb";
 
@@ -21,6 +22,7 @@ submitBtn?.addEventListener("click", async (event) => {
         response.results.forEach((result: Result) => {
           resultHTML += `
                     <div class='single-result'>
+                        <img src=https://image.tmdb.org/t/p/w300${result.poster_path} />
                         <h2>${result.original_title}</h2>
                         <p>Fecha de lanzamiento: ${result.release_date}</p>
                         <p> Resumen: ${result.overview} </p>
