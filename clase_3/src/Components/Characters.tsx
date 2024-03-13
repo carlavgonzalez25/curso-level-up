@@ -10,9 +10,9 @@ export const CharactersComponent: React.FC<CharacterProps> = ({
 }) => {
   return (
     <div className="characters-container">
-      {characters.map((character: Character) => {
+      {characters.map((character: Character, index: number) => {
         return (
-          <div className="item">
+          <div className="item" key={index}>
             <img src={character.image} />
             <p>{character.name}</p>
             <p>{character.gender}</p>

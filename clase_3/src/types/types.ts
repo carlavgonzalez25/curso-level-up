@@ -32,3 +32,7 @@ export interface ApiResponse {
   };
   results: Character[];
 }
+
+export interface Filter {
+  filter(characters: Character[]): Character[];
+}
