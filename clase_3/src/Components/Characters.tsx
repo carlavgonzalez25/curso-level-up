@@ -1,5 +1,5 @@
 import { Character } from "../types/types";
-import "./Characters.scss";
+import "./characters.scss";
 
 interface CharacterProps {
   characters: Character[];

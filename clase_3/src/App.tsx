@@ -8,7 +8,7 @@ import { useFilterCharacters } from "./hooks/hooks";
 import { GenderFilter, NameFilter, StatusFilter } from "./utils/filterStrategy";
 
 const App: React.FC = () => {
-  const [data, setData] = useState<Character[]>();
+  const [originalData, setOriginalData] = useState<Character[]>([]);
 
   async function getCharacters<T>(): Promise<T> {
     const response = await fetch("https://rickandmortyapi.com/api/character");
@@ -20,7 +20,7 @@ const App: React.FC = () => {
       try {
         const response = await getCharacters<ApiResponse>();
         const data = await response.results;
-        setData(data);
+        setOriginalData(data);
       } catch (error) {
         console.error(error);
       }
@@ -28,33 +28,28 @@ const App: React.FC = () => {
     fetchData();
   }, []);
 
-  function handleFilter(type: string, value: string) {
-    const { filteredCharacters, changeFilterStrategy } = useFilterCharacters();
+  const { filteredCharacters, changeFilterStrategy } = useFilterCharacters();
 
-    console.log("llega aca handle Filter de APP");
-
+  const handleFilter = (type: string, value: string) => {
     switch (type) {
       case "gender":
         changeFilterStrategy(new GenderFilter(value));
-        setData(filteredCharacters(data));
         break;
       case "status":
         changeFilterStrategy(new StatusFilter(value));
-        setData(filteredCharacters(data));
         break;
       case "name-search":
         changeFilterStrategy(new NameFilter(value));
-        setData(filteredCharacters(data));
     }
-  }
+  };
 
-  return data === undefined ? (
+  return filteredCharacters(originalData) === undefined ? (
     <p>Cargando...</p>
   ) : (
     <div className="container">
       <h1> Clase 3 - filtrado de personajes</h1>
       <FilterContainer handleChange={handleFilter} />
-      <CharactersComponent characters={data} />
+      <CharactersComponent characters={filteredCharacters(originalData)} />
     </div>
   );
 };

@@ -1,0 +1,8 @@
+.filter-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 2fr;
+  grid-template-rows: 1fr;
+  gap: 16px;
+  margin-bottom: 16px;
+}

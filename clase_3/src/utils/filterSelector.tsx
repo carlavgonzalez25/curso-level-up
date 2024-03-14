@@ -18,7 +18,9 @@ export const FilterElement: React.FC<FilterElementProps> = ({
     input: Input,
   };
 
-  const FilterComponent = filterMap[type as keyof typeof filterMap] as React.FC;
+  const FilterComponent = filterMap[
+    type as keyof typeof filterMap
+  ] as React.FC<FilterElementProps>;
 
-  return FilterComponent ? <FilterComponent {...rest} /> : null;
+  return FilterComponent ? <FilterComponent type={type} {...rest} /> : null;
 };
